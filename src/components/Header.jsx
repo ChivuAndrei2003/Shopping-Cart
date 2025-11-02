@@ -6,12 +6,14 @@ export default function Header({ cartItemsCount = 2 }) {
   return (
     <>
       <div className="flex justify-between -mx-0.5 items-center p-4 bg-gray-100">
+       {/* */}
         <div className="flex items-center gap-4">
-          <button className="flex  items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-            <img src={home} alt="Home" className="w-6 h-6" />
-            Home
-          </button>
-
+          <Link to="/">
+            <button className="flex  items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+              <img src={home} alt="Home" className="w-6 h-6" />
+              Home
+            </button>
+          </Link>
           <Link to="/store">
             <button className="flex  items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
               <img src={store} alt="Store" className="w-6 h-6" />
