@@ -1,43 +1,36 @@
 import { Link, Outlet } from "react-router-dom";
-import cart from "../assets/cart.svg";
-import store from "../assets/store.svg";
-import home from "../assets/home.svg";
-export default function Header({ cartItemsCount = 2 }) {
+import { useCart } from "../context/CartContext";
+
+export default function Header() {
+  const { getCartItemsCount } = useCart();
+  const cartItemsCount = getCartItemsCount();
+
   return (
     <>
-      <div className="flex justify-between -mx-0.5 items-center p-4 bg-gray-100">
-       {/* */}
-        <div className="flex items-center gap-4">
-          <Link to="/">
-            <button className="flex  items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-              <img src={home} alt="Home" className="w-6 h-6" />
+      <div className="border-b bg-white sticky top-0 z-10 shadow-sm">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-8">
+            <Link to="/" className="text-gray-900 hover:text-gray-600 font-medium transition-colors">
               Home
-            </button>
-          </Link>
-          <Link to="/store">
-            <button className="flex  items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-              <img src={store} alt="Store" className="w-6 h-6" />
+            </Link>
+            <Link to="/store" className="text-gray-900 hover:text-gray-600 font-medium transition-colors">
               Store
-            </button>
-          </Link>
-        </div>
+            </Link>
+          </div>
 
-        <Link to="/cart">
-          <button className="flex justify-start gap-2 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-            <div className="relative inline-block">
-              <img src={cart} alt="cart" className="w-6 h-6" />
+          <Link to="/cart" className="relative">
+            <span className="text-gray-900 hover:text-gray-600 font-medium transition-colors">
+              Cart
               {cartItemsCount > 0 && (
-                <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                <span className="ml-2 bg-gray-900 text-white text-xs px-2 py-1 rounded-full">
                   {cartItemsCount}
                 </span>
               )}
-            </div>
-            Cart
-          </button>
-        </Link>
+            </span>
+          </Link>
+        </div>
       </div>
       <Outlet />
-      {/* for rendering homePage,storePage and CartPage*/}
     </>
   );
 }

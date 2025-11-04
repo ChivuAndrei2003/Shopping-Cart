@@ -1,8 +1,6 @@
-import App from "../App";
 import CartPage from "./pages/Cart";
 import HomePage from "./pages/Home";
 import Header from "./components/Header";
-import { Children } from "react";
 import StorePage from "./pages/Store";
 
 const routes = [
@@ -16,4 +14,5 @@ const routes = [
     ],
   },
 ];
+
 export default routes;

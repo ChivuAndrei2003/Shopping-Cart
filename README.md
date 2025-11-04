@@ -9,11 +9,13 @@ This project implements a complete shopping cart experience with navigation betw
 ## 🎯 Features
 
 ### 🏠 Home Page
+
 - Welcome page with images and information
 - Navigation to other sections
 - Clean and simple design
 
 ### 🛍️ Shop Page
+
 - **Product Cards**: Individual cards for each product
 - **Quantity Controls**:
   - Manual input field for quantity
@@ -22,6 +24,7 @@ This project implements a complete shopping cart experience with navigation betw
 - **Add to Cart**: Button to add items to shopping cart
 
 ### 🛒 Cart Page
+
 - Display all items in cart with quantities
 - **Real-time Updates**: Cart badge shows item count in navbar
 - **Quantity Management**:
